@@ -21,6 +21,9 @@ REFERER_NAME = "大数据"
 USERNAME = ""
 PASSWORD = ""
 
+# 页码起始值
+START_PAGE_NUM = 1
+
 # MONGODB配置
 MONGODB_HOST = "localhost"
 MONGODB_PORT = 27017
@@ -30,11 +33,23 @@ MONGODB_COLLECTION = "LaGou"
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
+# 重定向
+REDIRECT_ENABLED = False
+
+# 重试
+RETRY_ENABLED = True
+RETRY_TIMES = 2
+RETRY_HTTP_CODES = [302]
+
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # CONCURRENT_REQUESTS = 32
 
-# See also autothrottle settings and docs
+# Download中间件的配置
 DOWNLOAD_DELAY = 1
+
+# DownloadTimeout Middleware的配置 默认是180秒
+DOWNLOAD_TIMEOUT = 10
+
 # The download delay setting will honor only one of:
 # CONCURRENT_REQUESTS_PER_DOMAIN = 16
 # CONCURRENT_REQUESTS_PER_IP = 16

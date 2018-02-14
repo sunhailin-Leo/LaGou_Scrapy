@@ -17,7 +17,7 @@ class Logger:
             log_path=os.path.abspath(__file__).replace(
                 'logger\LoggerHandler.py',
                 '') + "LaGou_data_spider.log",
-            file_log_level="DEBUG",
+            file_log_level=logging.ERROR,
             console_log_level="DEBUG"):
 
         # 创建一个logger
@@ -25,7 +25,7 @@ class Logger:
         self.logger.setLevel(logging.DEBUG)
 
         # 创建一个handler，用于写入日志文件
-        fh = logging.FileHandler(filename=log_path, mode='a', encoding="UTF-8")
+        fh = logging.FileHandler(filename=log_path, mode='a+', encoding="UTF-8")
         fh.setLevel(file_log_level)
 
         # 再创建一个handler，用于输出到控制台

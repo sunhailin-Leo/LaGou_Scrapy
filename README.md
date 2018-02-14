@@ -36,6 +36,12 @@ scrapy crawl LaGou -a search_name=大数据
 
 ---
 
+<h3 id="Bugs">已知的Bug</h3>
+
+* 长时间爬取会进入假死状态(待解决)
+
+---
+
 <h3 id="Future">未来进度</h3>
 
 * 修改启动方式
