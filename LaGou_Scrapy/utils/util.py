@@ -29,13 +29,14 @@ def get_value(data) -> str:
     return info
 
 
-def time_to_timestamp(time_str: str):
+def time_to_timestamp(time_str: str, time_format_model='%Y-%m-%d %H:%M:%S'):
     """
     年月日时分秒转时间戳
     :param time_str: 年月日时分秒
+    :param time_format_model: 时间格式模版
     :return: 时间戳
     """
-    return time.mktime(time.strptime(time_str, '%Y-%m-%d %H:%M:%S')) * 1000
+    return time.mktime(time.strptime(time_str, time_format_model)) * 1000
 
 
 def string_to_md5(string: str):

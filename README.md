@@ -16,6 +16,8 @@
     * Scrapy
     * requests
     * pymongo
+    * twisted
+    * PyDispatcher
 
 * 安装方式:
 
@@ -25,26 +27,31 @@ pip install -r requirements.txt
 
 ---
 
-<h3 id="GuideForUse">使用帮助</h3>
+<h3 id="GuideForUse">使用帮助及启动方法</h3>
 
-* -a 接的是参数名（之后会修改启动方式）
+* 启动的时候会有个Warning(可以忽略): ScrapyDeprecationWarning: Module `scrapy.conf` is deprecated, use `crawler.settings` attribute instead
+
 
 ```bash
-# 根目录下
-scrapy crawl LaGou -a search_name=大数据
+# scrapy crawl LaGou -a search_name=大数据 --- 已经不用这种方法了
+
+# 根目录下:
+python start_spider.py -name 大数据
 ```
 
 ---
 
 <h3 id="Bugs">已知的Bug</h3>
 
-* 长时间爬取会进入假死状态(待解决)
+* ~~长时间爬取会进入假死状态~~ (已解决)
 
 ---
 
 <h3 id="Future">未来进度</h3>
 
-* 修改启动方式
+* ~~修改启动方式~~
+* (优先) 增量的方法待完善
+* (优先) 定时任务
 * 进度监控
 * 接入到Gerapy
 

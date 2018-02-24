@@ -3,11 +3,8 @@
 Created on 2018年2月9日
 @author: Leo
 """
-# Python内置库
-import sys
-
 # 第三方库
-from pymongo import MongoClient
+import pymongo
 from scrapy.conf import settings
 
 # 项目内置库
@@ -28,7 +25,10 @@ class LagouScrapyPipeline(object):
         # 集合名
         self._collection_name = settings["MONGODB_COLLECTION"]
         # 数据库连接
-        self.client = MongoClient(host=self._host, port=self._port)
+        self.client = pymongo.MongoClient(host=self._host, port=self._port)
+        # 判断是否有用户名密码(用户名和密码都不为空的情况下)
+        if settings['MONGODB_USER'] != "" and settings['MONGODB_PASS'] != "":
+            self.client.admin.authenticate(settings['MONGODB_USER'], settings['MONGODB_PASS'])
         # 指定数据库
         self._db = self.client[self._db_name]
         # 指定集合名
