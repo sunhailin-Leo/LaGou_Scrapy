@@ -11,8 +11,8 @@ NEWSPIDER_MODULE = 'LaGou_Scrapy.spiders'
 REFERER_NAME = "大数据"
 
 # 拉钩网登陆账号密码
-USERNAME = "18666270636"
-PASSWORD = "379978424"
+USERNAME = ""
+PASSWORD = ""
 
 # 页码起始值
 START_PAGE_NUM = 1
