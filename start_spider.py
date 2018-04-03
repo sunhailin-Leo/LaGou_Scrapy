@@ -6,7 +6,6 @@ Created on 2018年2月22日
 
 import os
 import sys
-from os.path import dirname
 from schedule import Scheduler
 from twisted.internet import reactor
 from pydispatch import dispatcher
@@ -22,7 +21,7 @@ from LaGou_Scrapy.logger.LoggerHandler import Logger
 logger = Logger(logger='start_spider.py').get_logger()
 
 
-path = dirname(os.path.abspath(os.path.dirname(__file__)))
+path = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 sys.path.append(path)
 
 
